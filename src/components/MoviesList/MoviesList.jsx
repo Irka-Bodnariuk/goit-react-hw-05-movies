@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { CardWrapper, Container, MovieName } from './MoviesList.styled';
+import PropTypes from 'prop-types';
 
 export const MoviesList = ({ movies }) => {
   const location = useLocation();
@@ -24,4 +25,14 @@ export const MoviesList = ({ movies }) => {
       </Suspense>
     </Container>
   );
+};
+
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      poster_path: PropTypes.string,
+      original_title: PropTypes.string,
+    })
+  ),
 };

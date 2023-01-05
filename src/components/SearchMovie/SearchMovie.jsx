@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   Search,
   SearchForm,
@@ -29,4 +30,8 @@ export const SearchMovie = ({ onSubmit }) => {
       </SearchForm>
     </Search>
   );
+};
+
+SearchMovie.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
